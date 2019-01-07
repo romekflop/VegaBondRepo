@@ -1,0 +1,146 @@
+﻿<Window x:Class="Vegabond.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vegabond"
+        mc:Ignorable="d"
+        Title="VegaBond" WindowState="Maximized" WindowStyle="SingleBorderWindow">
+    <DockPanel Background="WhiteSmoke" LastChildFill="True">
+        <Label DockPanel.Dock="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="50"  Background="LightSkyBlue">Vegabond Bon System</Label>
+        <!--buttom-->
+        <Button x:Name="Print"  Content="הדפס" DockPanel.Dock="Bottom" Click="PrintButton_Click"/>
+        <Button x:Name="Cancel" Content="אפס הזמנה" DockPanel.Dock="Bottom" Click="Reset_Click" />
+        <Button x:Name="DeleteLine" Content="מחר שורה" DockPanel.Dock="Bottom" Click="DeleteLine_Click" />
+        <!--left-->
+        <StackPanel DockPanel.Dock="Left" Width="250">
+            <Label  HorizontalContentAlignment="Center">להדפסה:</Label>
+            <TextBlock TextAlignment="Center" TextWrapping="WrapWithOverflow" Text="{Binding Output, UpdateSourceTrigger=PropertyChanged}"  />
+        </StackPanel>
+         <!--center-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <TextBox Grid.Row="0" Grid.Column="0" MinWidth="300" HorizontalContentAlignment="Right" Text="{Binding Path=CustomerName, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Grid.Row="0" Grid.Column="1">:שם לקוח</Label>
+
+                <TextBox Grid.Row="1" Grid.Column="0" MinWidth="300" HorizontalContentAlignment="Right" Text="{Binding Path=Comments, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Grid.Row="1" Grid.Column="1">:הערות</Label>
+            </Grid>
+        
+            <WrapPanel HorizontalAlignment="Center"  Grid.Row="1">
+                <WrapPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="3,3" />
+                        <Setter Property="Padding" Value="3,3" />
+                    </Style>
+                </WrapPanel.Resources>
+                <WrapPanel>
+                    <CheckBox IsChecked="{Binding IsMatam}">מת"מ</CheckBox>
+                    <Button Content="+ללא גלוטן" Click="AddText_SameLine_Click"/>
+                    <StackPanel>
+                        <Button Content="שניצל תירס" Click="AddText_Click"/>
+                        <Button Content="שניצל סייטן" Click="AddText_Click"/>
+                    </StackPanel>
+                </WrapPanel>
+                <WrapPanel>
+                    <StackPanel>
+                        <Button Content="+אורז" Click="AddText_SameLine_Click"/>
+                        <Button Content="+מלא" Click="AddText_SameLine_Click"/>
+                        <Button Content="+מג'דרה" Click="AddText_SameLine_Click"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Button Content="גולאש" Click="AddText_Click"/>
+                        <Button Content="קאלדו" Click="AddText_Click"/>
+                        <Button Content="גמבו" Click="AddText_Click"/>
+                    </StackPanel>
+                </WrapPanel>
+                <StackPanel>
+                    <Button Content="ספרינג רול" Click="AddText_Click"/>
+                    <Button Content="שקשוקה" Click="AddText_Click"/>
+                    <Button Content="לזניה" Click="AddText_Click"/>
+                    
+                </StackPanel>
+                <StackPanel>
+                    <Button  Content="קציצות הודי" Click="AddText_Click"/>
+                    <Button  Content="קציצות עדשים" Click="AddText_Click"/>
+                    <Button  Content="מיקס קציצות" Click="AddText_Click"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="סמבוסק תרד" Click="AddText_Click"/>
+                    <Button Content="סמבוסק פטריות" Click="AddText_Click"/>
+                    <Button Content="מיקס סמבוסק" Click="AddText_Click"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="בראוני" Click="AddText_Click"/>
+                    <Button Content="מאפין" Click="AddText_Click"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="מרק אישי" Click="AddText_Click"/>
+                    <Button Content="מרק היום" Click="AddText_Click"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="אנטיפסטי" Click="AddText_Click"/>
+                    <Button Content="גיבץ'" Click="AddText_Click"/>
+                    <Button Content="כרובית" Click="AddText_Click"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="סלט קצוץ" Click="AddText_Click"/>
+                    <Button Content="סלט ירוק" Click="AddText_Click"/>
+                    <Button Content="סלט עדשים" Click="AddText_Click"/>
+                    <Button Content="סלט פריקה" Click="AddText_Click"/>
+                    <Button Content="כרובית" Click="AddText_Click"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="מנת אורז" Click="AddText_Click"/>
+                    <Button Content="מנת מלא" Click="AddText_Click"/>
+                    <Button Content="מנת מג'דרה" Click="AddText_Click"/>
+                    <Button Content="מנת פריקה" Click="AddText_Click"/>
+                    <Button Content="תפוא" Click="AddText_Click"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="+בצל" Click="AddText_SameLine_Click"/>
+                    <Button Content="+ירוק" Click="AddText_SameLine_Click"/>
+                    <Button Content="+גדול" Click="AddText_SameLine_Click"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="קולה" Click="AddText_Click"/>
+                    <Button Content="קולה זירו" Click="AddText_Click"/>
+                    <Button Content="ספרייט" Click="AddText_Click"/>
+                    <Button Content="דיאט ספרייט" Click="AddText_Click"/>
+                    <Button Content="תפוזים" Click="AddText_Click"/>
+                    <Button Content="לימונדה" Click="AddText_Click"/>
+                </StackPanel>
+            </WrapPanel>
+           
+        </Grid>
+        <!--<StackPanel >
+            <Button x:Name="Food1" Content="שניצל תירס" Click="AddText_Click"/>
+            <Button x:Name="Food2" Content="שניצל סייטן" Click="AddText_Click"/>
+            <Button x:Name="Food3" Content="גולאש" Click="AddText_Click"/>
+            <Button x:Name="Food4" Content="קאלדו" Click="AddText_Click"/>
+            <Button x:Name="Food5" Content="גמבו" Click="AddText_Click"/>
+            <Button x:Name="Food6" Content="ספרינג רול" Click="AddText_Click"/>
+            <Button x:Name="Food7" Content="שקשוקה" Click="AddText_Click"/>
+            <Button x:Name="Food8" Content="לזניה" Click="AddText_Click"/>
+            <Button x:Name="Food9" Content="קציצות הודי" Click="AddText_Click"/>
+            <Button x:Name="Food10" Content="מיקס קציצות" Click="AddText_Click"/>
+        </StackPanel>-->
+    </DockPanel>
+</Window>
