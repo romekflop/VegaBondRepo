@@ -1,11 +1,8 @@
-﻿<Window x:Class="Vegabond.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Vegabond"
-        mc:Ignorable="d"
-        Title="VegaBond" WindowState="Maximized" WindowStyle="SingleBorderWindow">
+﻿<controls:MetroWindow x:Class="Vegabond.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      Title="VegaBond" WindowState="Maximized" WindowStyle="SingleBorderWindow">
     <DockPanel Background="WhiteSmoke" LastChildFill="True">
         <Label DockPanel.Dock="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="50"  Background="LightSkyBlue">Vegabond Bon System</Label>
         <!--buttom-->
@@ -43,13 +40,10 @@
                 <TextBox Grid.Row="1" Grid.Column="0" MinWidth="300" HorizontalContentAlignment="Right" Text="{Binding Path=Comments, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Grid.Row="1" Grid.Column="1">:הערות</Label>
             </Grid>
-        
-            <WrapPanel HorizontalAlignment="Center"  Grid.Row="1">
+
+            <WrapPanel FlowDirection="LeftToRight"  VerticalAlignment="Top"  Grid.Row="1">
                 <WrapPanel.Resources>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Margin" Value="3,3" />
-                        <Setter Property="Padding" Value="3,3" />
-                    </Style>
+                    
                 </WrapPanel.Resources>
                 <WrapPanel>
                     <CheckBox IsChecked="{Binding IsMatam}">מת"מ</CheckBox>
@@ -143,4 +137,4 @@
             <Button x:Name="Food10" Content="מיקס קציצות" Click="AddText_Click"/>
         </StackPanel>-->
     </DockPanel>
-</Window>
+</controls:MetroWindow>
