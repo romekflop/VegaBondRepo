@@ -4,11 +4,11 @@
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                       Title="VegaBond" WindowState="Maximized" WindowStyle="SingleBorderWindow">
     <DockPanel Background="WhiteSmoke" LastChildFill="True">
-        <Label DockPanel.Dock="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="50"  Background="LightSkyBlue">Vegabond Bon System</Label>
+        <Label DockPanel.Dock="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="50" FontSize="30" FontWeight="Bold"  Background="LightSkyBlue">Vegabond Bon System</Label>
         <!--buttom-->
         <Button x:Name="Print"  Content="הדפס" DockPanel.Dock="Bottom" Click="PrintButton_Click"/>
         <Button x:Name="Cancel" Content="אפס הזמנה" DockPanel.Dock="Bottom" Click="Reset_Click" />
-        <Button x:Name="DeleteLine" Content="מחר שורה" DockPanel.Dock="Bottom" Click="DeleteLine_Click" />
+        <Button x:Name="DeleteLine" Content="מחק שורה" DockPanel.Dock="Bottom" Click="DeleteLine_Click" />
         <!--left-->
         <StackPanel DockPanel.Dock="Left" Width="250">
             <Label  HorizontalContentAlignment="Center">להדפסה:</Label>
@@ -41,7 +41,7 @@
                 <Label Grid.Row="1" Grid.Column="1">:הערות</Label>
             </Grid>
 
-            <Grid FlowDirection="LeftToRight"  VerticalAlignment="Top"  Grid.Row="1">
+            <Grid  VerticalAlignment="Top"  Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
