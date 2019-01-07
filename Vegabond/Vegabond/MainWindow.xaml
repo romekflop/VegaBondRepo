@@ -41,11 +41,25 @@
                 <Label Grid.Row="1" Grid.Column="1">:הערות</Label>
             </Grid>
 
-            <WrapPanel FlowDirection="LeftToRight"  VerticalAlignment="Top"  Grid.Row="1">
-                <WrapPanel.Resources>
-                    
-                </WrapPanel.Resources>
-                <WrapPanel>
+            <Grid FlowDirection="LeftToRight"  VerticalAlignment="Top"  Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <WrapPanel Grid.Row="0" Grid.Column="0">
                     <CheckBox IsChecked="{Binding IsMatam}">מת"מ</CheckBox>
                     <Button Content="+ללא גלוטן" Click="AddText_SameLine_Click"/>
                     <StackPanel>
@@ -53,7 +67,7 @@
                         <Button Content="שניצל סייטן" Click="AddText_Click"/>
                     </StackPanel>
                 </WrapPanel>
-                <WrapPanel>
+                <WrapPanel Grid.Row="0" Grid.Column="1">
                     <StackPanel>
                         <Button Content="+אורז" Click="AddText_SameLine_Click"/>
                         <Button Content="+מלא" Click="AddText_SameLine_Click"/>
@@ -65,55 +79,55 @@
                         <Button Content="גמבו" Click="AddText_Click"/>
                     </StackPanel>
                 </WrapPanel>
-                <StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="2">
                     <Button Content="ספרינג רול" Click="AddText_Click"/>
                     <Button Content="שקשוקה" Click="AddText_Click"/>
                     <Button Content="לזניה" Click="AddText_Click"/>
                     
                 </StackPanel>
-                <StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="3">
                     <Button  Content="קציצות הודי" Click="AddText_Click"/>
                     <Button  Content="קציצות עדשים" Click="AddText_Click"/>
                     <Button  Content="מיקס קציצות" Click="AddText_Click"/>
                 </StackPanel>
-                <StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="4">
                     <Button Content="סמבוסק תרד" Click="AddText_Click"/>
                     <Button Content="סמבוסק פטריות" Click="AddText_Click"/>
                     <Button Content="מיקס סמבוסק" Click="AddText_Click"/>
                 </StackPanel>
-                <StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="5">
                     <Button Content="בראוני" Click="AddText_Click"/>
                     <Button Content="מאפין" Click="AddText_Click"/>
                 </StackPanel>
-                <StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="6">
                     <Button Content="מרק אישי" Click="AddText_Click"/>
                     <Button Content="מרק היום" Click="AddText_Click"/>
                 </StackPanel>
-                <StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="7">
                     <Button Content="אנטיפסטי" Click="AddText_Click"/>
                     <Button Content="גיבץ'" Click="AddText_Click"/>
                     <Button Content="כרובית" Click="AddText_Click"/>
                 </StackPanel>
-                <StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="8">
                     <Button Content="סלט קצוץ" Click="AddText_Click"/>
                     <Button Content="סלט ירוק" Click="AddText_Click"/>
                     <Button Content="סלט עדשים" Click="AddText_Click"/>
                     <Button Content="סלט פריקה" Click="AddText_Click"/>
                     <Button Content="כרובית" Click="AddText_Click"/>
                 </StackPanel>
-                <StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="9">
                     <Button Content="מנת אורז" Click="AddText_Click"/>
                     <Button Content="מנת מלא" Click="AddText_Click"/>
                     <Button Content="מנת מג'דרה" Click="AddText_Click"/>
                     <Button Content="מנת פריקה" Click="AddText_Click"/>
                     <Button Content="תפוא" Click="AddText_Click"/>
                 </StackPanel>
-                <StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="10">
                     <Button Content="+בצל" Click="AddText_SameLine_Click"/>
                     <Button Content="+ירוק" Click="AddText_SameLine_Click"/>
                     <Button Content="+גדול" Click="AddText_SameLine_Click"/>
                 </StackPanel>
-                <StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="11">
                     <Button Content="קולה" Click="AddText_Click"/>
                     <Button Content="קולה זירו" Click="AddText_Click"/>
                     <Button Content="ספרייט" Click="AddText_Click"/>
@@ -121,7 +135,7 @@
                     <Button Content="תפוזים" Click="AddText_Click"/>
                     <Button Content="לימונדה" Click="AddText_Click"/>
                 </StackPanel>
-            </WrapPanel>
+            </Grid>
            
         </Grid>
         <!--<StackPanel >
