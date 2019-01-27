@@ -73,5 +73,19 @@ namespace Vegabond
         {
             order.DeleteLastLine();
         }
+
+        private void AddComment_Click(object sender, RoutedEventArgs e)
+        {
+            order.AddContent_SameLine(order.Comments);
+            order.Comments = String.Empty;
+        }
+
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                AddComment_Click(this, new RoutedEventArgs());
+            }
+        }
     }
 }

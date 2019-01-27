@@ -36,9 +36,15 @@
                 </Grid.RowDefinitions>
                 <TextBox Grid.Row="0" Grid.Column="0" MinWidth="300" HorizontalContentAlignment="Right" Text="{Binding Path=CustomerName, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Grid.Row="0" Grid.Column="1">:שם לקוח</Label>
-
-                <TextBox Grid.Row="1" Grid.Column="0" MinWidth="300" HorizontalContentAlignment="Right" Text="{Binding Path=Comments, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" />
-                <Label Grid.Row="1" Grid.Column="1">:הערות</Label>
+                <StackPanel Grid.Row="1" Grid.Column="0">
+                    <Label HorizontalAlignment="Right" Grid.Column="1">:הערות</Label>
+                    <TextBox 
+                        KeyDown="OnKeyDownHandler"
+                        MinWidth="300" 
+                        HorizontalContentAlignment="Right" Text="{Binding Path=Comments, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Button Content="הוסף הערה או לחץ על אנטר" Click="AddComment_Click"/>
+                </StackPanel>
+                
             </Grid>
 
             <Grid  VerticalAlignment="Top"  Grid.Row="1">

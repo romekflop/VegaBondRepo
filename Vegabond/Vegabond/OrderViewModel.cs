@@ -65,7 +65,7 @@ namespace Vegabond
                 if (value != comments)
                 {
                     comments = value;
-                    Output = ToString();
+                    NotifyPropertyChanged(nameof(Comments));
                 }
             }
         }
@@ -100,7 +100,10 @@ namespace Vegabond
 
         public void AddContent_SameLine(string content)
         {
-            this.content[this.content.Count - 1] = $"{this.content[this.content.Count - 1]} {content}";
+            if (this.content.Count == 0)
+                this.content.Add(content);
+            else
+                this.content[this.content.Count - 1] = $"{this.content[this.content.Count - 1]} {content}";
             Output = ToString();
         }
         public void AddContent(string content)
@@ -122,7 +125,6 @@ namespace Vegabond
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"{Time}");
             sb.AppendLine($"{CustomerName}");
-            sb.AppendLine($"{Comments}");
             if(isMatam)
                 sb.AppendLine($"מתם");
             sb.AppendLine();
