@@ -8,6 +8,7 @@
         <!--buttom-->
         <Button x:Name="Print"  Content="הדפס" DockPanel.Dock="Bottom" Click="PrintButton_Click"/>
         <Button x:Name="Cancel" Content="אפס הזמנה" DockPanel.Dock="Bottom" Click="Reset_Click" />
+        <Button x:Name="NewLine" Content="שורה חדשה" DockPanel.Dock="Bottom" Click="NewLine_Click" />
         <Button x:Name="DeleteLine" Content="מחק שורה" DockPanel.Dock="Bottom" Click="DeleteLine_Click" />
         <!--left-->
         <StackPanel DockPanel.Dock="Left" Width="250">
@@ -60,9 +61,10 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.75*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.75*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <WrapPanel Grid.Row="0" Grid.Column="0">
@@ -140,6 +142,17 @@
                     <Button Content="דיאט ספרייט" Click="AddText_Click"/>
                     <Button Content="תפוזים" Click="AddText_Click"/>
                     <Button Content="לימונדה" Click="AddText_Click"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="12">
+                    <Button Content="בורגר" Click="AddText_Click"/>
+                    <Button Content="לחמניה" Click="AddText_Click"/>
+                    <Button Content="קטשופ" Click="AddText_Click"/>
+                    <Button Content="מיונז" Click="AddText_Click"/>
+                    <Button Content="שום" Click="AddText_Click"/>
+                    <Button Content="חריף" Click="AddText_Click"/>
+                    <Button Content="טחינה" Click="AddText_Click"/>
+                    <Button Content="סויה" Click="AddText_Click"/>
+                    <Button Content="ע''מ" Click="AddText_SameLine_Click"/>
                 </StackPanel>
             </Grid>
            

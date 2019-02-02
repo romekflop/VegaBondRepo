@@ -87,5 +87,10 @@ namespace Vegabond
                 AddComment_Click(this, new RoutedEventArgs());
             }
         }
+
+        private void NewLine_Click(object sender, RoutedEventArgs e)
+        {
+            order.AddContent(string.Empty);
+        }
     }
 }
